@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: "pushpendersingh/postgres_supervisord"
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    env_file:
+      - env_file
+    networks:
+      - db_nw
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  db_nw:
+    external:
+      name: db_nw
+volumes:
+  dbdata:
