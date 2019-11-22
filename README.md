@@ -1,1 +1,1 @@
-# postgres_supervisord_dockerhub
+**PostgreSQL Dockerfile with Docker-compose file created with Supervisor Implementation**
